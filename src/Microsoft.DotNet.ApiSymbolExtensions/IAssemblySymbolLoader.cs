@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.IO;
 
-namespace Microsoft.DotNet.ApiCompatibility
+namespace Microsoft.DotNet.ApiSymbolExtensions
 {
     /// <summary>
     /// Loads <see cref="IAssemblySymbol"/> objects from source files, binaries or directories containing binaries.
