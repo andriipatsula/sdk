@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework Condition="'$(DotNetBuildFromSource)' == 'true'">net7.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <IsPackable>true</IsPackable>
+    <PackAsTool>true</PackAsTool>
+    <Nullable>enable</Nullable>
+    <!--<_MicrosoftDotNetApiCompatToolPath>..\..\ApiCompat\Microsoft.DotNet.ApiCompat.Tool</_MicrosoftDotNetApiCompatToolPath>-->
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <!--<Compile Include="$(_MicrosoftDotNetApiCompatToolPath)\ConsoleCompatibilityLogger.cs" Link="ConsoleCompatibilityLogger.cs" />-->
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.CommandLine" Version="$(SystemCommandLineVersion)" />
+    <ProjectReference Include="..\Microsoft.DotNet.GenAPI.Shared\Microsoft.DotNet.GenAPI.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="$(RepoRoot)LICENSE.txt" PackagePath="LICENSE.txt" Pack="true" />
+  </ItemGroup>
+</Project>

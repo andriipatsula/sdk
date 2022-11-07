@@ -399,6 +399,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dotnet-new", "dotnet-new", 
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Microsoft.DotNet.ApiSymbolExtensions", "src\Microsoft.DotNet.ApiSymbolExtensions\Microsoft.DotNet.ApiSymbolExtensions.shproj", "{9B0BF5B4-D8E0-4726-872B-7099ED927C51}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GenAPI", "GenAPI", "{95D8B040-FD7F-4C86-8E47-341AF630EDA9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.DotNet.GenAPI.Tool", "src\GenAPI\Microsoft.DotNet.GenAPI.Tool\Microsoft.DotNet.GenAPI.Tool.csproj", "{9C08C7BD-EC01-42FA-AF1B-4177686DFC64}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.DotNet.GenAPI.Shared", "src\GenAPI\Microsoft.DotNet.GenAPI.Shared\Microsoft.DotNet.GenAPI.Shared.csproj", "{CFF946F9-8C34-4F4D-A606-29133B6AD2C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -757,6 +763,14 @@ Global
 		{C37EC61D-6A88-4C15-B371-A61F23EF9072}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C37EC61D-6A88-4C15-B371-A61F23EF9072}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C37EC61D-6A88-4C15-B371-A61F23EF9072}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C08C7BD-EC01-42FA-AF1B-4177686DFC64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C08C7BD-EC01-42FA-AF1B-4177686DFC64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C08C7BD-EC01-42FA-AF1B-4177686DFC64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C08C7BD-EC01-42FA-AF1B-4177686DFC64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFF946F9-8C34-4F4D-A606-29133B6AD2C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFF946F9-8C34-4F4D-A606-29133B6AD2C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFF946F9-8C34-4F4D-A606-29133B6AD2C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFF946F9-8C34-4F4D-A606-29133B6AD2C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -895,6 +909,9 @@ Global
 		{06260DC7-BA64-42BE-B99C-6069A1C3E70E} = {580D1AE7-AA8F-4912-8B76-105594E00B3B}
 		{81003712-2EF6-47D0-904A-64E4DDD75BF7} = {06260DC7-BA64-42BE-B99C-6069A1C3E70E}
 		{9B0BF5B4-D8E0-4726-872B-7099ED927C51} = {22AB674F-ED91-4FBC-BFEE-8A1E82F9F05E}
+		{95D8B040-FD7F-4C86-8E47-341AF630EDA9} = {22AB674F-ED91-4FBC-BFEE-8A1E82F9F05E}
+		{9C08C7BD-EC01-42FA-AF1B-4177686DFC64} = {95D8B040-FD7F-4C86-8E47-341AF630EDA9}
+		{CFF946F9-8C34-4F4D-A606-29133B6AD2C7} = {95D8B040-FD7F-4C86-8E47-341AF630EDA9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FB8F26CE-4DE6-433F-B32A-79183020BBD6}
@@ -906,5 +923,6 @@ Global
 		src\Microsoft.DotNet.ApiSymbolExtensions\Microsoft.DotNet.ApiSymbolExtensions.projitems*{9b0bf5b4-d8e0-4726-872b-7099ed927c51}*SharedItemsImports = 13
 		src\ApiCompat\Microsoft.DotNet.ApiCompat.Shared\Microsoft.DotNet.ApiCompat.Shared.projitems*{9d36039f-d0a1-462f-85b4-81763c6b02cb}*SharedItemsImports = 13
 		src\ApiCompat\Microsoft.DotNet.ApiCompat.Shared\Microsoft.DotNet.ApiCompat.Shared.projitems*{a9103b98-d888-4260-8a05-fa36f640698a}*SharedItemsImports = 5
+		src\Microsoft.DotNet.ApiSymbolExtensions\Microsoft.DotNet.ApiSymbolExtensions.projitems*{cff946f9-8c34-4f4d-a606-29133b6ad2c7}*SharedItemsImports = 5
 	EndGlobalSection
 EndGlobal

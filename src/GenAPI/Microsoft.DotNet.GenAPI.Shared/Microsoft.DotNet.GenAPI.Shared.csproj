@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework Condition="'$(DotNetBuildFromSource)' == 'true'">net7.0</TargetFramework>
+    <ExcludeFromSourceBuild>true</ExcludeFromSourceBuild>
+    <IsPackable>true</IsPackable>
+    <Nullable>enable</Nullable>
+    <!-- We pin the code analysis version when not in source build as we need to support running on older
+    SDKs when the OOB package is used. -->
+    <_MicrosoftCodeAnalysisVersion>4.0.1</_MicrosoftCodeAnalysisVersion>
+    <_MicrosoftCodeAnalysisVersion Condition="'$(DotNetBuildFromSource)' == 'true'">$(MicrosoftCodeAnalysisPackageVersion)</_MicrosoftCodeAnalysisVersion>
+    <!-- <_MicrosoftDotNetApiCompatibilityPath>..\..\ApiCompat\Microsoft.DotNet.ApiCompatibility</_MicrosoftDotNetApiCompatibilityPath> -->
+  </PropertyGroup>
+
+  <!-- <ItemGroup>
+    <Compile Include="$(_MicrosoftDotNetApiCompatibilityPath)\IAssemblySymbolLoader.cs" Link="ApiCompat\IAssemblySymbolLoader.cs" />
+    <Compile Include="$(_MicrosoftDotNetApiCompatibilityPath)\AssemblyLoadWarning.cs" Link="ApiCompat\AssemblyLoadWarning.cs" />
+    <Compile Include="$(_MicrosoftDotNetApiCompatibilityPath)\AssemblySymbolLoader.cs" Link="ApiCompat\AssemblySymbolLoader.cs" />
+    <Compile Include="$(_MicrosoftDotNetApiCompatibilityPath)\DiagnosticIds.cs" Link="ApiCompat\DiagnosticIds.cs" />
+    <Compile Include="$(_MicrosoftDotNetApiCompatibilityPath)\Logging\ICompatibilityLogger.cs" Link="ApiCompat\Logging\ICompatibilityLogger.cs" />
+    <Compile Include="$(_MicrosoftDotNetApiCompatibilityPath)\Logging\MessageImportance.cs" Link="ApiCompat\Logging\MessageImportance.cs" />
+    <Compile Include="$(_MicrosoftDotNetApiCompatibilityPath)\Logging\Suppression.cs" Link="ApiCompat\Logging\Suppression.cs" />
+    
+    <Compile Include="$(_MicrosoftDotNetApiCompatibilityPath)\Abstractions\Filtering\ISymbolFilter.cs" Link="ApiCompat\Abstractions\ISymbolFilter.cs" />
+    <Compile Include="$(_MicrosoftDotNetApiCompatibilityPath)\Abstractions\IDiagnostic.cs" Link="ApiCompat\Abstractions\IDiagnostic.cs" />
+  </ItemGroup> -->
+
+  <!-- <ItemGroup>
+    <EmbeddedResource Include="$(_MicrosoftDotNetApiCompatibilityPath)\Resources.resx" GenerateSource="True" />
+  </ItemGroup> -->
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis" Version="$(_MicrosoftCodeAnalysisVersion)" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="$(_MicrosoftCodeAnalysisVersion)" />
+  </ItemGroup>
+
+  <Import Project="..\..\Microsoft.DotNet.ApiSymbolExtensions\Microsoft.DotNet.ApiSymbolExtensions.projitems" Label="Shared" />
+</Project>
